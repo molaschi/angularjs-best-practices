@@ -48,7 +48,8 @@ http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-l
 - scope e $watch
 - controller snelli https://scotch.io/tutorials/making-skinny-angularjs-controllers
 
-**Struttura (https://scotch.io/tutorials/angularjs-best-practices-directory-structure)**
+**Struttura**
+https://scotch.io/tutorials/angularjs-best-practices-directory-structure
 - app
  - main.js
  - routes.js

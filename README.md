@@ -42,6 +42,7 @@ http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-l
 - applyAync vs evalAsync (http://www.bennadel.com/blog/2751-scope-applyasync-vs-scope-evalasync-in-angularjs-1-3.htm)
 - decorate $exceptionHandler
 - use $log
-- destroy (http://www.bennadel.com/blog/2548-don-t-forget-to-cancel-timeout-timers-in-your-destroy-events-in-angularjs.htm)
+- destroy (http://www.bennadel.com/blog/2548-don-t-forget-to-cancel-timeout-timers-in-your-destroy-events-in-angularjs.htm) jQuery $interval
 - ng-hint
 - bind once {{::var}}
+- scope e $watch

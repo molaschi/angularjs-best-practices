@@ -46,3 +46,4 @@ http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-l
 - ng-hint
 - bind once {{::var}}
 - scope e $watch
+- controller snelli https://scotch.io/tutorials/making-skinny-angularjs-controllers

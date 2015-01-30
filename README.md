@@ -47,3 +47,39 @@ http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-l
 - bind once {{::var}}
 - scope e $watch
 - controller snelli https://scotch.io/tutorials/making-skinny-angularjs-controllers
+
+**Struttura**
+- app
+ - main.js
+ - routes.js
+ - core
+  - services
+   - service1.js
+   - service2.js
+   - ...
+  - controllers
+   - controller1.js
+   - controller2.js
+   - ...
+  - filters
+   - filter1.js
+   - filter2.js
+   - ...
+  - directives
+   - directive1.js
+   - directive2.js
+   - ...
+  - partials
+   - directive1.html
+   - directive2.html
+   - ...
+ - features
+  - home
+   - homeController.js
+   - homeService.js
+   - homeController2.js
+   - ...
+  - page
+   - pageController.js
+   - pageService.js
+   - ...

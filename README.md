@@ -24,3 +24,19 @@ http://filimanjaro.com/blog/2014/angular-directive-lifecycle-vs-link-compile-con
 **Misc.**
 Performance tips for item lists
 http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-lists/
+
+
+
+- service vs factory vs provider (http://stackoverflow.com/questions/14324451/angular-service-vs-angular-factory)
+- ng-model-options (http://blog.thoughtram.io/angularjs/2014/10/19/exploring-angular-1.3-ng-model-options.html)
+- ng-repeat (track by, ng-hide)
+- ng-if vs ng-show/ng-hide
+- apply vs digest (http://www.bennadel.com/blog/2595-using-scope-digest-as-a-performance-optimization-in-angularjs.htm)
+- eventi
+- evalAsync vs $timeout (http://stackoverflow.com/questions/17301572/angularjs-evalasync-vs-timeout e 
+- applyAsync (soprattutto per raggruppare in cicli di digest le risposte delle chiamate ajax con $httpProvider http://blog.thoughtram.io/angularjs/2015/01/14/exploring-angular-1.3-speed-up-with-applyAsync.html)
+- decorate $exceptionHandler
+- use $log
+- destroy (http://www.bennadel.com/blog/2548-don-t-forget-to-cancel-timeout-timers-in-your-destroy-events-in-angularjs.htm)
+- ng-hint
+- bind once {{::var}}

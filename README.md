@@ -12,6 +12,7 @@ http://trochette.github.io/Angular-Design-Patterns-Best-Practices/#/intro
 
 "Controller as" syntax let us to avoid injecting $scope for data binding.
 http://toddmotto.com/digging-into-angulars-controller-as-syntax/
+(http://blog.thoughtram.io/angularjs/2015/01/02/exploring-angular-1.3-bindToController.html)
 
 Controller decoration to add $watch $on $broadcast and so on without $scope injection
 http://plnkr.co/edit/PzPjYhtuopKvlwiVsYhT?p=preview

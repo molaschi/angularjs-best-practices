@@ -30,7 +30,7 @@ http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-l
 
 
 - debuginfoenabled = false su $compileProvider
-- direttive: compile eseguito una volta, link tutte le volte
+- direttive: compile eseguito una volta, link tutte le volte. terminal e priority
 - service vs factory vs provider (http://stackoverflow.com/questions/14324451/angular-service-vs-angular-factory)
 - ng-model-options (http://blog.thoughtram.io/angularjs/2014/10/19/exploring-angular-1.3-ng-model-options.html)
 - ng-repeat (track by, ng-hide)

@@ -1,7 +1,14 @@
-# angularjs-best-practices
+# AngularJS best practices 
 
-**Project and code organization**
+*Hints and tips for large AngularJS applications*
 
+This guide is based on openmind team experience in large SPA based on AngularJS
+
+##Project and code organization
+In a large project, AngularJS code could be logically splitted in 2 main parts
+- **core**
+contains all the code needed at startup or shared by more than a single application feature. Ideally core part follow "by type" organization:
+- features: containes all the code  
 Large project organization need to follow a feature-based criteria. In every dir representing a feature we need to put a kind of JS manifest that includes all the objects used in that module. In the manifest we also add all the requireJS/browserifiy loading logic:
 http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript
 

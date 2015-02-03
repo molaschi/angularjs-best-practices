@@ -5,10 +5,38 @@
 This guide is based on openmind team experience in large SPA based on AngularJS
 
 ##Project and code organization
-In a large project, AngularJS code could be logically splitted in 2 main parts
-- **core**
-contains all the code needed at startup or shared by more than a single application feature. Ideally core part follow "by type" organization:
-- features: containes all the code  
+In a large project, AngularJS code could be logically splitted in 2 parts
+- **core**: All the code needed at startup or shared by more than a single feature.<br/>Ideally, the code organization of the core follows a by-type-based criteria:
+```
+/core
+  /controllers
+    login.ctrl.js
+    error.ctrl.js
+  /services
+    cache.srv.js
+    store.srv.js
+    mail.srv.js
+  /filters
+    currency.flt.js
+  /directives
+  	    
+```
+- **features**: Every application feature ("page") has its own folder, with specific controllers, services, filters, directives and views 
+```
+/features
+  /homepage
+    homepage.ctrl.js
+    homepage.srv.js
+    homepage.tmpl.html    
+  /about
+	about.ctrl.js
+    about.tmpl.html
+  /books
+    books.ctrl.js
+    books.tmpl.html
+    books.show.tmpl.html
+```
+
 Large project organization need to follow a feature-based criteria. In every dir representing a feature we need to put a kind of JS manifest that includes all the objects used in that module. In the manifest we also add all the requireJS/browserifiy loading logic:
 http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript
 

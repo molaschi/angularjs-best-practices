@@ -5,8 +5,12 @@
 This guide is based on openmind team experience in large SPA based on AngularJS
 
 ##Project and code organization
+
+http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript
+http://trochette.github.io/Angular-Design-Patterns-Best-Practices/#/intro
+
 In a large project, AngularJS code could be logically splitted in 2 parts
-- **core**: All the code needed at startup or shared by more than a single feature.<br/>Ideally, the code organization of the core follows a by-type-based criteria:
+- **core**: All the code needed at startup or shared by more than a single feature.<br/>Ideally, the code organization of the core follows a module-based criteria; usually modules are defined in a type-based criteria, ending in a project organized as follows:
 ```
 /core
   /controllers
@@ -18,9 +22,9 @@ In a large project, AngularJS code could be logically splitted in 2 parts
     mail.srv.js
   /filters
     currency.flt.js
-  /directives
-  	    
+  /directives 
 ```
+
 - **features**: Every application feature ("page") has its own folder, with specific controllers, services, filters, directives and views 
 ```
 /features
@@ -37,13 +41,100 @@ In a large project, AngularJS code could be logically splitted in 2 parts
     books.show.tmpl.html
 ```
 
-Large project organization need to follow a feature-based criteria. In every dir representing a feature we need to put a kind of JS manifest that includes all the objects used in that module. In the manifest we also add all the requireJS/browserifiy loading logic:
-http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript
+This code organizations helps you defining concatenation and minification rules in order to output a single javascript file for the whole core and one javascript file for every feature.
 
-Various best practices for large projects:
-http://trochette.github.io/Angular-Design-Patterns-Best-Practices/#/intro
+### Naming convention
 
-**Controller**
+In order to help you searching and defining build rules, suffix your files with the code type:
+- controller: \*.ctrl.js
+- service: \*.srv.js
+- filter: \*.flt.js
+- directive: \*.drv.js
+- template: \*.tmpl.html
+
+### AMD
+
+If you use AMD in your project, there are some changes to files organization that ease AMD modules <-> AngularJS modules definition and loading:
+```
+/core
+  index.js
+  /controllers
+    ...
+    index.js
+    module.js
+  /services
+    ...
+    index.js
+    module.js
+  /filters
+    ...
+    index.js
+    module.js
+  /directives
+    ...
+    index.js
+    module.js
+/features
+  /homepage
+    index.js
+    ...
+  /about
+    index.js
+    ...
+```
+
+Add an *index.js* file to each folder to define dependency from subfolders or files.
+
+**/core/index.js**
+```
+define([
+  './controllers/index',
+  './services/index',
+  './filters/index',
+  './directives/index'
+], function () {
+});
+```
+
+**/core/controllers/index.js**
+```
+define([
+  './login.ctrl',
+  './error.ctrl'
+], function (angular) {
+});
+```
+
+Following the module-based organization criteria, add to each module folder a *module.js* file in which the angular module is defined.
+
+**/core/controllers/module.js**
+```
+define([
+  'angular',
+  '../services/index',
+  '../filters/index',
+  '../directives/index'
+], function (angular) {
+  return angular.module('myapp.controllers', [
+    'myapp.services',
+    'myapp.filters',
+    'myapp.directives'
+  ]);
+});
+```
+
+Then make each controller / service / filter / directive dependant on the right module.js file:
+
+**/core/controllers/\*.ctrl.js**
+```
+define([
+  './module'
+], function (module) {
+  module.controller(...)
+});
+```
+
+## Controllers
 
 "Controller as" syntax let us to avoid injecting $scope for data binding.
 http://toddmotto.com/digging-into-angulars-controller-as-syntax/
